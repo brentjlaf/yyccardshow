@@ -132,7 +132,7 @@ h1{
 }
 .sub{
   font-size:17px;font-weight:700;
-  color:var(--muted);max-width:70ch;
+  color:var(--muted);
   position:relative;
 }
 .hero-actions{display:flex;gap:16px;margin-top:26px;flex-wrap:wrap;position:relative}
