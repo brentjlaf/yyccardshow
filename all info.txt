@@ -3400,10 +3400,15 @@ You can paste this over your existing file and tweak text later.
   <div class="wrap inner">
     <div class="brand">
       <div class="logo"></div>
-      <div>
+      <!---
+
+<div>
         <b>YYC Cards & Collectibles Show</b>
         <span>Sports • Pokémon • TCG • Slabs • Toys</span>
       </div>
+
+
+-->
     </div>
     <div style="display:flex;gap:12px;">
       <a class="btn" href="#vendors">Vendor Tables</a>
@@ -3721,10 +3726,15 @@ footer{
   <div class="wrap inner">
     <div class="brand">
       <div class="logo"></div>
-      <div>
+      <!---
+
+<div>
         <b>YYC Cards & Collectibles Show</b>
         <span>Sports • Pokémon • TCG • Slabs • Toys</span>
       </div>
+
+
+-->
     </div>
     <div style="display:flex;gap:12px">
       <a class="btn" href="#vendors">Vendor Tables</a>
@@ -4631,10 +4641,15 @@ footer{
   <div class="wrap inner">
     <div class="brand">
       <div class="logo"><img src="logo.png" /></div>
-      <div>
+      <!---
+
+<div>
         <b>YYC Cards & Collectibles Show</b>
         <span>Sports • Pokémon • TCG • Slabs • Toys</span>
       </div>
+
+
+-->
     </div>
     <div style="display:flex;gap:12px">
       <a class="btn" href="#vendors">Vendor Tables</a>
