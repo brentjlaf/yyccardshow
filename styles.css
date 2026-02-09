@@ -245,6 +245,22 @@ footer{
   color:var(--muted);
   font-size:13px;font-weight:700;
 }
+.footer-grid{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  flex-wrap:wrap;
+}
+.footer-links{
+  display:flex;
+  gap:16px;
+  flex-wrap:wrap;
+}
+.footer-links a{
+  color:var(--muted);
+  font-weight:700;
+}
 
 /* RESPONSIVE */
 @media(max-width:900px){
