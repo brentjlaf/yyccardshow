@@ -3529,7 +3529,7 @@ Vendor logo grid
 
 Inline Google Form for tables
 
-Eventbrite / Square checkout embed
+Square checkout embed
 
 Tell me how wild you want it (subtle → full hype), and I’ll take it another level up.
 
@@ -4002,7 +4002,7 @@ Clear pricing & rules → vendor trust
 
 Everything on one page → no confusion
 
-Scales easily into Eventbrite, Square, or Google Forms
+Scales easily into Square or Google Forms
 
 Next power moves (highly recommended)
 
