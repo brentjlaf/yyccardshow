@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>YYC Cards & Collectibles Show | Vendor Table Request</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+<div class="topbar">
+  <div class="wrap inner">
+    <div class="brand">
+      <div class="logo"><img src="logo.png" alt="YYC Cards & Collectibles Show logo"></div>
+      <div>
+        <b>YYC Cards & Collectibles Show</b>
+        <span>Sports • Pokémon • TCG • Slabs • Toys</span>
+      </div>
+    </div>
+    <nav class="nav">
+      <a class="btn" href="YYC%20Cards.html">Home</a>
+      <a class="btn" href="event-details.html">Event Details</a>
+      <a class="btn" href="domains.html">Vendors</a>
+      <a class="btn" href="sponsors.html">Sponsors</a>
+    </nav>
+  </div>
+</div>
+
+<header>
+  <div class="wrap">
+    <div class="hero">
+      <span class="badge">Vendor Booking</span>
+      <h1>Vendor Table Request</h1>
+      <p class="sub">
+        Apply for vendor tables, share your inventory focus, and let us know how many
+        tables you need for the YYC Cards & Collectibles Show.
+      </p>
+      <div class="hero-actions">
+        <a class="btn primary" href="#form">Start Request</a>
+        <a class="btn" href="domains.html">View Vendor Pricing</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="form">
+  <div class="wrap">
+    <h2>Vendor Request Form</h2>
+    <p class="section-sub">We’ll respond with confirmation, payment options, and load-in details.</p>
+    <div class="grid grid-2">
+      <div class="card">
+        <form>
+          <div class="form-grid">
+            <label class="form-field">
+              <span>Full Name</span>
+              <input type="text" placeholder="Your name">
+            </label>
+            <label class="form-field">
+              <span>Business / Brand</span>
+              <input type="text" placeholder="Shop or brand name">
+            </label>
+            <label class="form-field">
+              <span>Email</span>
+              <input type="email" placeholder="you@email.com">
+            </label>
+            <label class="form-field">
+              <span>Phone</span>
+              <input type="tel" placeholder="(403) 555-1234">
+            </label>
+            <label class="form-field">
+              <span>Number of Tables</span>
+              <select>
+                <option>1 Table</option>
+                <option>2 Tables</option>
+                <option>3 Tables</option>
+              </select>
+            </label>
+            <label class="form-field">
+              <span>Inventory Focus</span>
+              <input type="text" placeholder="Sports, Pokémon, TCG, slabs, etc.">
+            </label>
+            <label class="form-field full">
+              <span>Notes or Requests</span>
+              <textarea placeholder="Share special requests, power needs, or setup notes."></textarea>
+            </label>
+          </div>
+          <div class="form-actions">
+            <button class="btn primary" type="submit">Send Vendor Request</button>
+            <button class="btn" type="reset">Clear</button>
+          </div>
+        </form>
+      </div>
+      <div class="card">
+        <h3>Helpful Reminders</h3>
+        <ul>
+          <li>Load-in runs 7:00–9:00am on show day.</li>
+          <li>Tables include chairs and vendor badges.</li>
+          <li>Let us know if you want neighboring tables.</li>
+          <li>We’ll confirm availability within 48 hours.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    © <span id="y"></span> YYC Cards & Collectibles Show • Vendor Table Request
+  </div>
+</footer>
+
+<script>
+document.getElementById('y').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
