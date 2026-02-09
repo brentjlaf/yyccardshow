@@ -1,0 +1,591 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>YYC Cards & Collectibles Show</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  /* Base (from logo) */
+  --bg:#030925;
+  --panel:#071033;
+  --panel-soft:#0a1540;
+  --text:#FCFDFC;
+  --muted:rgba(252,253,252,.72);
+
+  /* Brand accents (from logo) */
+  --blue:#57BCF2;
+  --royal:#2B31A0;
+  --yellow:#FDE31D;
+  --orange:#F89906;
+  --red:#ED1D13;
+  --deep-red:#A1070E;
+
+  /* Brand gradients */
+  --grad-main: linear-gradient(135deg, var(--blue) 0%, var(--yellow) 45%, var(--orange) 100%);
+  --grad-alt:  linear-gradient(135deg, var(--royal) 0%, var(--blue) 100%);
+  --grad-hot:  linear-gradient(135deg, var(--red) 0%, var(--orange) 55%, var(--yellow) 100%);
+
+  --radius:18px;
+  --radius-sm:14px;
+  --shadow:0 25px 60px rgba(0,0,0,.55);
+  --max:1150px;
+}
+
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:'Montserrat',system-ui,sans-serif;
+  color:var(--text);
+  background:
+    radial-gradient(900px 520px at 12% -10%, rgba(87,188,242,.30), transparent 60%),
+    radial-gradient(900px 600px at 92% 0%, rgba(237,29,19,.22), transparent 60%),
+    radial-gradient(900px 600px at 55% 115%, rgba(253,227,29,.14), transparent 62%),
+    var(--bg);
+}
+
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--max);margin:auto;padding:0 22px}
+
+/* HEADER */
+.topbar{
+  position:sticky;top:0;z-index:50;
+  backdrop-filter:blur(12px);
+  background:rgba(10,13,20,.85);
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.topbar .inner{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:16px 0;gap:16px;
+}
+.brand{display:flex;gap:14px;align-items:center}
+.logo{
+  width:150px;
+}
+
+.logo img{
+  width:100%;
+}
+.brand b{font-size:17px;font-weight:900}
+.brand span{font-size:12px;color:var(--muted);font-weight:700}
+
+.btn{
+  padding:12px 18px;border-radius:999px;
+  font-weight:900;font-size:13px;letter-spacing:.4px;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.14);
+  transition:.15s ease;
+  cursor:pointer;
+}
+.btn:hover{transform:translateY(-2px);background:rgba(255,255,255,.12)}
+.btn.primary{
+  background: var(--grad-main);
+  color:#0b0f1a;
+  border:none;
+}
+.btn.primary:hover{
+  box-shadow:0 8px 25px rgba(87,188,242,.4);
+}
+
+/* HERO */
+header{padding:70px 0 40px}
+.hero{
+  background:var(--panel);
+  border-radius:var(--radius);
+  padding:46px;
+  box-shadow:var(--shadow);
+  border:1px solid rgba(255,255,255,.08);
+  position:relative;
+  overflow:hidden;
+}
+.hero::before{
+  content:'';
+  position:absolute;
+  top:-50%;right:-30%;
+  width:600px;height:600px;
+  background:radial-gradient(circle, rgba(87,188,242,.15), transparent 70%);
+  animation:pulse 8s ease-in-out infinite;
+  pointer-events:none;
+}
+@keyframes pulse{
+  0%,100%{transform:scale(1);opacity:.3}
+  50%{transform:scale(1.2);opacity:.5}
+}
+.badge{
+  display:inline-block;
+  padding:6px 14px;
+  font-size:12px;font-weight:900;
+  background: var(--grad-hot);
+  color:#0b0f1a;
+  border-radius:999px;
+  animation:shimmer 3s ease-in-out infinite;
+  position:relative;
+}
+@keyframes shimmer{
+  0%,100%{filter:brightness(1)}
+  50%{filter:brightness(1.3)}
+}
+h1{
+  font-size:46px;font-weight:900;
+  letter-spacing:-1px;
+  line-height:1.05;margin:18px 0;
+  position:relative;
+}
+.sub{
+  font-size:17px;font-weight:700;
+  color:var(--muted);max-width:70ch;
+  position:relative;
+}
+.hero-actions{display:flex;gap:16px;margin-top:26px;flex-wrap:wrap;position:relative}
+
+/* SECTIONS */
+section{padding:60px 0}
+h2{
+  font-size:30px;font-weight:900;
+  letter-spacing:-.6px;margin:0 0 10px;
+  background:var(--grad-main);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+.section-sub{
+  font-size:15px;font-weight:700;
+  color:var(--muted);margin-bottom:28px;
+  max-width:75ch;
+}
+
+.grid{display:grid;gap:22px}
+.grid-2{grid-template-columns:repeat(2,1fr)}
+.grid-3{grid-template-columns:repeat(3,1fr)}
+
+.card{
+  background:var(--panel-soft);
+  border-radius:var(--radius-sm);
+  padding:26px;
+  border:1px solid rgba(255,255,255,.08);
+  box-shadow:0 12px 30px rgba(0,0,0,.45);
+  transition:.2s ease;
+  position:relative;
+}
+.card:hover{
+  transform:translateY(-4px);
+  border-color:rgba(87,188,242,.3);
+  box-shadow:0 20px 40px rgba(0,0,0,.6);
+}
+.card h3{
+  font-size:17px;font-weight:900;margin:0 0 12px;
+  display:flex;align-items:center;gap:8px;
+}
+.card h3::before{
+  content:'🔥';
+  font-size:16px;
+}
+.card:nth-child(2) h3::before{content:'⚡'}
+.card:nth-child(3) h3::before{content:'🎯'}
+.card:nth-child(4) h3::before{content:'💎'}
+.card:nth-child(5) h3::before{content:'🎪'}
+.card:nth-child(6) h3::before{content:'✨'}
+
+ul{
+  margin:0;padding-left:18px;
+  font-size:14px;font-weight:700;
+  color:var(--muted);
+}
+ul li{margin:8px 0}
+
+.price{
+  font-size:38px;font-weight:900;
+  background:var(--grad-main);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  margin:12px 0;
+}
+
+/* HIGHLIGHTED CARDS */
+#tickets .card:nth-child(2){
+  border:2px solid var(--orange);
+  background:linear-gradient(135deg, var(--panel-soft) 0%, rgba(248,153,6,.08) 100%);
+}
+#tickets .card:nth-child(2)::after{
+  content:'POPULAR';
+  position:absolute;
+  top:12px;right:12px;
+  font-size:10px;font-weight:900;
+  background:var(--grad-hot);
+  color:#0b0f1a;
+  padding:4px 10px;
+  border-radius:999px;
+}
+
+/* STATS BAR */
+.stats{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:20px;margin:40px 0;
+  text-align:center;
+}
+.stat{
+  background:rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:var(--radius-sm);
+  padding:20px;
+}
+.stat-num{
+  font-size:36px;font-weight:900;
+  background:var(--grad-main);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+.stat-label{
+  font-size:12px;font-weight:700;
+  color:var(--muted);
+  text-transform:uppercase;
+  letter-spacing:.5px;
+}
+
+/* FAQ */
+details{
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:14px;
+  padding:14px;
+  cursor:pointer;
+  transition:.2s ease;
+}
+details:hover{
+  background:rgba(255,255,255,.06);
+  border-color:rgba(87,188,242,.3);
+}
+details + details{margin-top:12px}
+summary{cursor:pointer;font-weight:900;font-size:14px}
+details p{margin:10px 0 0;color:var(--muted);font-size:14px;font-weight:600}
+
+/* FOOTER */
+footer{
+  padding:50px 0;
+  border-top:1px solid rgba(255,255,255,.08);
+  color:var(--muted);
+  font-size:13px;font-weight:700;
+  text-align:center;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  h1{font-size:36px}
+  .grid-2,.grid-3{grid-template-columns:1fr}
+  .hero{padding:32px}
+  .stats{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+  <div class="wrap inner">
+    <div class="brand">
+      <div class="logo"><img src="logo.png" /></div>
+      <div>
+        <b>YYC Cards & Collectibles Show</b>
+        <span>Sports • Pokémon • TCG • Slabs • Toys</span>
+      </div>
+    </div>
+    <div style="display:flex;gap:12px">
+      <a class="btn" href="#vendors">Vendor Tables</a>
+      <a class="btn primary" href="#tickets">Get Tickets 🎫</a>
+    </div>
+  </div>
+</div>
+
+<header>
+  <div class="wrap">
+    <div class="hero">
+      <span class="badge">🔥 North Calgary • One Day Only</span>
+      <h1>Calgary's Most Epic<br>Cards & Collectibles Show</h1>
+      <p class="sub">
+        Hundreds of vendors. Thousands of cards. One incredible day. Hunt down grails, flip slabs, 
+        crack packs, and score deals on sports cards, Pokémon, TCGs, vintage toys, and pure nostalgia.
+      </p>
+      <div class="hero-actions">
+        <a class="btn primary" href="#tickets">🎟️ Secure Your Spot</a>
+        <a class="btn" href="#vendors">💼 Book a Table</a>
+        <a class="btn" href="#sponsors">⭐ Become a Sponsor</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-num">50+</div>
+        <div class="stat-label">Vendor Tables</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">500+</div>
+        <div class="stat-label">Expected Buyers</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">5hrs</div>
+        <div class="stat-label">Non-Stop Action</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">$1M+</div>
+        <div class="stat-label">Cards on Tables</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="details">
+  <div class="wrap">
+    <h2>What's Inside 🎯</h2>
+    <p class="section-sub">
+      Everything collectors crave under one roof — no fluff, just fire.
+    </p>
+
+    <div class="grid grid-3">
+      <div class="card">
+        <h3>The Good Stuff</h3>
+        <ul>
+          <li>🏒 Hockey legends & rookies</li>
+          <li>🏀 NBA inserts & parallels</li>
+          <li>🏈 NFL grails & prizms</li>
+          <li>⚾ Vintage baseball gems</li>
+          <li>⚡ Pokémon sealed & slabs</li>
+          <li>🃏 Yu-Gi-Oh, MTG & more</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Show Schedule</h3>
+        <ul>
+          <li>7:00–9:00am – Vendors set up</li>
+          <li>9:00–10:00am – 🔥 Early Entry VIP hour</li>
+          <li>10:00am–3:00pm – Gates wide open</li>
+          <li>3:00–5:00pm – Pack it up</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Find Us Here</h3>
+        <ul>
+          <li>📍 North Calgary</li>
+          <li>🅿️ Free parking on-site</li>
+          <li>🚗 Easy access off Stoney Trail</li>
+          <li>📢 Exact venue dropping soon</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="tickets">
+  <div class="wrap">
+    <h2>Get In The Door 🎫</h2>
+    <p class="section-sub">Simple pricing. No games. Early birds get the grails.</p>
+
+    <div class="grid grid-3">
+      <div class="card">
+        <h3>General Admission</h3>
+        <div class="price">$8</div>
+        <ul>
+          <li>10am–3pm full access</li>
+          <li>Kids under 12 FREE</li>
+          <li>Cash & card accepted</li>
+          <li>Re-entry allowed</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Early Entry VIP</h3>
+        <div class="price">$15</div>
+        <ul>
+          <li>⚡ 1 FULL HOUR before everyone</li>
+          <li>First crack at grails & slabs</li>
+          <li>Skip the lineup chaos</li>
+          <li>🚨 Limited spots available</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>The Fine Print</h3>
+        <ul>
+          <li>✅ Family-friendly vibes</li>
+          <li>✅ Come & go as you please</li>
+          <li>❌ No refunds at door</li>
+          <li>💳 Cash & card both work</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="vendors">
+  <div class="wrap">
+    <h2>Vendor Tables 💼</h2>
+    <p class="section-sub">
+      Fair pricing. Real traffic. Serious buyers with cash ready to spend.
+    </p>
+
+    <div class="grid grid-2">
+      <div class="card">
+        <h3>Table Package</h3>
+        <div class="price">$100</div>
+        <ul>
+          <li>6–8 ft table + chair</li>
+          <li>Prime floor placement</li>
+          <li>7–9am early load-in</li>
+          <li>💰 Multi-table discounts available</li>
+          <li>Electricity add-on: $20</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Vendor Guidelines</h3>
+        <ul>
+          <li>✅ Authentic items only</li>
+          <li>✅ Keep aisles clear</li>
+          <li>✅ No table sharing (ask first)</li>
+          <li>✅ Breaks & streams OK (low-volume)</li>
+          <li>⚠️ Refund cutoff enforced</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="sponsors">
+  <div class="wrap">
+    <h2>Sponsorship Packages ⭐</h2>
+    <p class="section-sub">Real eyeballs. Real ROI. No "exposure" nonsense.</p>
+
+    <div class="grid grid-3">
+      <div class="card">
+        <h3>Supporting Sponsor</h3>
+        <div class="price">$250</div>
+        <ul>
+          <li>Logo on site & flyers</li>
+          <li>Social media shoutout</li>
+          <li>Door signage placement</li>
+          <li>Digital program listing</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Event Sponsor</h3>
+        <div class="price">$500</div>
+        <ul>
+          <li>🎪 Banner at main entrance</li>
+          <li>FREE vendor table included</li>
+          <li>Multiple social mentions</li>
+          <li>Featured on event page</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Title Sponsor</h3>
+        <div class="price">$1,000</div>
+        <ul>
+          <li>🏆 "Presented by [YOU]"</li>
+          <li>Largest logo everywhere</li>
+          <li>Prime table + electricity</li>
+          <li>Exclusive category rights</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <h2>FAQ ❓</h2>
+    <p class="section-sub">Quick answers. No surprises.</p>
+
+    <div class="grid grid-2">
+      <div class="card">
+        <details open>
+          <summary>🎯 Is this just sports cards?</summary>
+          <p>Nope! Sports, Pokémon, Yu-Gi-Oh, MTG, graded slabs, toys, comics, and all things collectible.</p>
+        </details>
+        <details>
+          <summary>👨‍👩‍👧 Can I bring my kids?</summary>
+          <p>100% family-friendly. Kids under 12 get in FREE with an adult. Bring the whole crew!</p>
+        </details>
+        <details>
+          <summary>💎 Will there be high-end slabs?</summary>
+          <p>Absolutely. Early Entry gets first dibs on the grails.</p>
+        </details>
+      </div>
+
+      <div class="card">
+        <details open>
+          <summary>🛡️ Do vendors need insurance?</summary>
+          <p>Nope! Event insurance is covered by the organizer.</p>
+        </details>
+        <details>
+          <summary>📹 Can vendors stream or break live?</summary>
+          <p>Yep — just keep it low-volume and don't block aisles.</p>
+        </details>
+        <details>
+          <summary>🔄 Can I leave and come back?</summary>
+          <p>Yes! Re-entry is allowed all day long.</p>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <h2>Let's Talk 📬</h2>
+    <p class="section-sub">One inbox. Fast replies. No runaround.</p>
+
+    <div class="grid grid-3">
+      <div class="card">
+        <h3>Email Us</h3>
+        <ul>
+          <li>📧 hello@yourdomain.ca</li>
+          <li>Vendor & sponsor questions</li>
+          <li>General inquiries</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Follow the Hype</h3>
+        <ul>
+          <li>📸 Instagram: @yourhandle</li>
+          <li>👥 Facebook Page & Event</li>
+          <li>🔔 Join the email list</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Quick Forms</h3>
+        <ul>
+          <li>📝 Vendor table request</li>
+          <li>⭐ Sponsor inquiry</li>
+          <li>✉️ Join the mailing list</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    🔥 © <span id="y"></span> YYC Cards & Collectibles Show • Built for collectors, by collectors 🔥
+  </div>
+</footer>
+
+<script>
+document.getElementById('y').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
